@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NayePankh AI Hub — Empowering NGO Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span class="brand-icon">🌱</span>
+      <span class="brand-name">NayePankh <span class="brand-accent">AI Hub</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#chatbot">AI Assistant</a>
+      <a href="#analytics">Analytics</a>
+      <a href="#volunteer">Volunteers</a>
+    </div>
+    <button class="nav-cta" onclick="document.getElementById('chatbot').scrollIntoView({behavior:'smooth'})">
+      Talk to AI ✨
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">🤖 Developed by DEEP 💻</div>
+  <h1 class="hero-title">
+    Intelligence for<br/>
+    <span class="gradient-text">Social Good</span>
+  </h1>
+  <p class="hero-subtitle">
+    NayePankh Foundation's AI-powered platform — automating operations,<br/>
+    amplifying impact, and empowering every volunteer.
+  </p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('chatbot').scrollIntoView({behavior:'smooth'})">
+      Launch AI Assistant 🚀
+    </button>
+    <button class="btn-secondary" onclick="document.getElementById('analytics').scrollIntoView({behavior:'smooth'})">
+      View Analytics 📊
+    </button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num" data-target="2400">0</span><span class="stat-label">Volunteers</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" data-target="180">0</span><span class="stat-label">Campaigns</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" data-target="95">0</span><span class="stat-label">% Engagement</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" data-target="48">0</span><span class="stat-label">Cities</span></div>
+  </div>
+</section>
+
+<!-- Feature Cards -->
+<section class="features" id="features">
+  <div class="section-label">WHAT WE BUILT</div>
+  <h2 class="section-title">Six AI Modules,<br/>One Unified Platform</h2>
+  <div class="feature-grid">
+    <div class="feature-card card-glow" onclick="openTab('chatbot')">
+      <div class="card-icon">🤖</div>
+      <h3>AI Assistant</h3>
+      <p>Conversational AI that answers volunteer queries, explains programs, and guides donors — 24/7 support powered by Claude.</p>
+      <span class="card-tag">AI Internship</span>
+    </div>
+    <div class="feature-card" onclick="openTab('analytics')">
+      <div class="card-icon">📊</div>
+      <h3>Data Analytics Dashboard</h3>
+      <p>Real-time visualization of volunteer growth, campaign reach, fundraising trends and regional impact using live charts.</p>
+      <span class="card-tag">Data Analytics</span>
+    </div>
+    <div class="feature-card" onclick="openTab('volunteer')">
+      <div class="card-icon">🙋</div>
+      <h3>Volunteer Registration</h3>
+      <p>Smart form with AI-matched role suggestions, skill-tagging, and automated welcome messages on submission.</p>
+      <span class="card-tag">Full Stack</span>
+    </div>
+    <div class="feature-card" onclick="openTab('predictor')">
+      <div class="card-icon">🧠</div>
+      <h3>ML Campaign Predictor</h3>
+      <p>Machine learning model predicts campaign success probability based on timing, audience segment, and content type.</p>
+      <span class="card-tag">ML Internship</span>
+    </div>
+    <div class="feature-card" onclick="openTab('agent')">
+      <div class="card-icon">⚡</div>
+      <h3>AI Agent Workflow</h3>
+      <p>Autonomous agents handle report generation, social media drafting, and volunteer follow-ups automatically.</p>
+      <span class="card-tag">AI Agent</span>
+    </div>
+    <div class="feature-card" onclick="openTab('python')">
+      <div class="card-icon">🐍</div>
+      <h3>Python Automation</h3>
+      <p>Automated data pipeline that processes volunteer data, generates weekly reports, and sends digest emails.</p>
+      <span class="card-tag">Python Dev</span>
+    </div>
+  </div>
+</section>
+
+<!-- AI CHATBOT SECTION -->
+<section class="module-section" id="chatbot">
+  <div class="module-header">
+    <div class="section-label">AI INTERNSHIP MODULE</div>
+    <h2 class="section-title">NayePankh <span class="gradient-text">AI Assistant</span></h2>
+    <p class="section-sub">Powered by Claude AI — ask anything about NayePankh Foundation</p>
+  </div>
+  <div class="chatbot-wrapper">
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="chat-avatar">🌱</div>
+        <div class="chat-info">
+          <div class="chat-name">Pankh — NayePankh AI</div>
+          <div class="chat-status"><span class="status-dot"></span> Online & Ready</div>
+        </div>
+        <button class="chat-clear" onclick="clearChat()">Clear ✕</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="msg bot-msg">
+          <div class="msg-avatar">🌱</div>
+          <div class="msg-bubble">
+            Hello! I'm <strong>Pankh</strong>, NayePankh Foundation's AI assistant. 👋<br/><br/>
+            I can help you with:<br/>
+            • Learning about our programs & campaigns<br/>
+            • Volunteering opportunities<br/>
+            • Donation information<br/>
+            • Education & skill-building initiatives<br/><br/>
+            What would you like to know?
+          </div>
+        </div>
+      </div>
+      <div class="chat-suggestions">
+        <button onclick="sendQuick('How can I volunteer with NayePankh?')">🙋 How to volunteer?</button>
+        <button onclick="sendQuick('What programs does NayePankh run?')">📚 Our programs</button>
+        <button onclick="sendQuick('How does AI help NayePankh Foundation?')">🤖 AI in NGOs</button>
+        <button onclick="sendQuick('How can I donate to NayePankh?')">❤️ Donate</button>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Ask Pankh anything..." onkeydown="if(event.key==='Enter') sendMessage()"/>
+        <button onclick="sendMessage()" class="send-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYTICS SECTION -->
+<section class="module-section alt-bg" id="analytics">
+  <div class="module-header">
+    <div class="section-label">DATA ANALYTICS MODULE</div>
+    <h2 class="section-title">Impact <span class="gradient-text">Dashboard</span></h2>
+    <p class="section-sub">Live analytics for NayePankh Foundation's reach and engagement</p>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-icon">👥</div>
+        <div class="kpi-value">2,418</div>
+        <div class="kpi-label">Total Volunteers</div>
+        <div class="kpi-trend up">▲ 23% this month</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">💰</div>
+        <div class="kpi-value">₹8.4L</div>
+        <div class="kpi-label">Funds Raised</div>
+        <div class="kpi-trend up">▲ 41% YoY</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">📣</div>
+        <div class="kpi-value">180</div>
+        <div class="kpi-label">Campaigns Run</div>
+        <div class="kpi-trend up">▲ 12 this quarter</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">🏙️</div>
+        <div class="kpi-value">48</div>
+        <div class="kpi-label">Cities Reached</div>
+        <div class="kpi-trend up">▲ 8 new cities</div>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card">
+        <h3>📈 Volunteer Growth (2024–2025)</h3>
+        <canvas id="volunteerChart" height="220"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>🎯 Campaign Categories</h3>
+        <canvas id="campaignChart" height="220"></canvas>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card">
+        <h3>💸 Monthly Fundraising (₹)</h3>
+        <canvas id="fundChart" height="200"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>🌍 Regional Volunteer Distribution</h3>
+        <canvas id="regionChart" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER REGISTRATION -->
+<section class="module-section" id="volunteer">
+  <div class="module-header">
+    <div class="section-label">FULL STACK MODULE</div>
+    <h2 class="section-title">Smart Volunteer <span class="gradient-text">Registration</span></h2>
+    <p class="section-sub">AI matches your skills to the best volunteer role automatically</p>
+  </div>
+  <div class="form-container">
+    <div class="form-card">
+      <div id="formStep1" class="form-step active">
+        <h3>Tell us about yourself 👋</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="vName" placeholder="Your full name"/>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="vEmail" placeholder="your@email.com"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" id="vCity" placeholder="Your city"/>
+          </div>
+          <div class="form-group">
+            <label>College / Organization</label>
+            <input type="text" id="vOrg" placeholder="Your institution"/>
+          </div>
+        </div>
+        <button class="btn-primary full-btn" onclick="nextStep()">Continue → Skills</button>
+      </div>
+
+      <div id="formStep2" class="form-step">
+        <h3>Your Skills & Interests 🎯</h3>
+        <label class="form-label">Select your skills (pick all that apply)</label>
+        <div class="skill-tags" id="skillTags">
+          <span class="skill-tag" onclick="toggleSkill(this)">🎨 Design</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">💻 Coding</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">📝 Content Writing</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">📱 Social Media</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">🎤 Public Speaking</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">📊 Data Analysis</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">🤖 AI / ML</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">📷 Photography</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">🎬 Video Editing</span>
+          <span class="skill-tag" onclick="toggleSkill(this)">🧑‍🏫 Teaching</span>
+        </div>
+        <div class="form-group" style="margin-top:1.5rem;">
+          <label>Availability per week</label>
+          <select id="vHours">
+            <option value="">Select hours</option>
+            <option>2–5 hours</option>
+            <option>5–10 hours</option>
+            <option>10–20 hours</option>
+            <option>Full-time</option>
+          </select>
+        </div>
+        <div class="form-btns">
+          <button class="btn-secondary" onclick="prevStep()">← Back</button>
+          <button class="btn-primary" onclick="submitVolunteer()">Get AI Role Match 🤖</button>
+        </div>
+      </div>
+
+      <div id="formStep3" class="form-step">
+        <div class="success-animation">
+          <div class="success-icon">✅</div>
+          <h3>You're registered!</h3>
+          <p id="successMsg"></p>
+          <div class="role-match-card" id="roleMatch"></div>
+          <button class="btn-primary" onclick="resetForm()" style="margin-top:1.5rem;">Register Another →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ML PREDICTOR -->
+<section class="module-section alt-bg" id="predictor">
+  <div class="module-header">
+    <div class="section-label">MACHINE LEARNING MODULE</div>
+    <h2 class="section-title">Campaign Success <span class="gradient-text">Predictor</span></h2>
+    <p class="section-sub">ML model estimates your campaign reach and engagement potential</p>
+  </div>
+  <div class="predictor-container">
+    <div class="predictor-form">
+      <div class="form-group">
+        <label>Campaign Type</label>
+        <select id="campType">
+          <option value="education">📚 Education Drive</option>
+          <option value="fundraising">💰 Fundraising</option>
+          <option value="awareness">📣 Awareness Campaign</option>
+          <option value="recruitment">🙋 Volunteer Recruitment</option>
+          <option value="skill">🛠️ Skill Workshop</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Target Audience Size</label>
+        <input type="range" id="audienceSize" min="100" max="10000" value="1000" oninput="updateSlider('audienceSize','audienceSizeVal')"/>
+        <span class="slider-val" id="audienceSizeVal">1,000</span>
+      </div>
+      <div class="form-group">
+        <label>Budget (₹)</label>
+        <input type="range" id="budget" min="1000" max="100000" value="10000" step="1000" oninput="updateSlider('budget','budgetVal')"/>
+        <span class="slider-val" id="budgetVal">₹10,000</span>
+      </div>
+      <div class="form-group">
+        <label>Duration (days)</label>
+        <input type="range" id="duration" min="1" max="90" value="14" oninput="updateSlider('duration','durationVal')"/>
+        <span class="slider-val" id="durationVal">14 days</span>
+      </div>
+      <div class="form-group">
+        <label>Social Media Presence</label>
+        <select id="socialMedia">
+          <option value="low">📉 Low (< 500 followers)</option>
+          <option value="medium" selected>📊 Medium (500–5k followers)</option>
+          <option value="high">📈 High (5k+ followers)</option>
+        </select>
+      </div>
+      <button class="btn-primary full-btn" onclick="predictCampaign()">🧠 Predict Campaign Success</button>
+    </div>
+    <div class="predictor-results" id="predictorResults" style="display:none">
+      <div class="result-header">📊 ML Prediction Results</div>
+      <div class="result-score">
+        <div class="score-circle" id="scoreCircle">
+          <span id="scoreNum">0%</span>
+          <span class="score-label">Success Score</span>
+        </div>
+      </div>
+      <div class="result-metrics" id="resultMetrics"></div>
+      <div class="result-insights" id="resultInsights"></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI AGENT SECTION -->
+<section class="module-section" id="agent">
+  <div class="module-header">
+    <div class="section-label">AI AGENT MODULE</div>
+    <h2 class="section-title">Autonomous <span class="gradient-text">AI Agent</span></h2>
+    <p class="section-sub">AI agents that draft content, generate reports & automate NGO workflows</p>
+  </div>
+  <div class="agent-container">
+    <div class="agent-tasks">
+      <div class="agent-task-card" onclick="runAgent('social')">
+        <div class="task-icon">📱</div>
+        <div class="task-info">
+          <div class="task-name">Social Media Post Generator</div>
+          <div class="task-desc">Auto-draft Instagram/Twitter posts for NayePankh campaigns</div>
+        </div>
+        <span class="task-run">Run ▶</span>
+      </div>
+      <div class="agent-task-card" onclick="runAgent('report')">
+        <div class="task-icon">📋</div>
+        <div class="task-info">
+          <div class="task-name">Weekly Impact Report</div>
+          <div class="task-desc">Generate a formatted weekly summary of volunteer activities</div>
+        </div>
+        <span class="task-run">Run ▶</span>
+      </div>
+      <div class="agent-task-card" onclick="runAgent('email')">
+        <div class="task-icon">📧</div>
+        <div class="task-info">
+          <div class="task-name">Volunteer Welcome Email</div>
+          <div class="task-desc">Craft personalized welcome emails for new volunteers</div>
+        </div>
+        <span class="task-run">Run ▶</span>
+      </div>
+      <div class="agent-task-card" onclick="runAgent('fundraise')">
+        <div class="task-icon">💌</div>
+        <div class="task-info">
+          <div class="task-name">Fundraising Appeal Writer</div>
+          <div class="task-desc">Write compelling donation appeal messages for campaigns</div>
+        </div>
+        <span class="task-run">Run ▶</span>
+      </div>
+    </div>
+    <div class="agent-output-panel">
+      <div class="agent-output-header">
+        <span>🤖 Agent Output</span>
+        <span id="agentStatus" class="agent-idle">Idle</span>
+      </div>
+      <div class="agent-output-content" id="agentOutput">
+        <div class="agent-placeholder">
+          <div style="font-size:3rem">⚡</div>
+          <p>Select a task on the left to run the AI agent</p>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyAgentOutput()" id="copyBtn" style="display:none">📋 Copy Output</button>
+    </div>
+  </div>
+</section>
+
+<!-- PYTHON AUTOMATION -->
+<section class="module-section alt-bg" id="python">
+  <div class="module-header">
+    <div class="section-label">PYTHON AUTOMATION MODULE</div>
+    <h2 class="section-title">Automated <span class="gradient-text">Data Pipeline</span></h2>
+    <p class="section-sub">Python-powered automation for volunteer data processing & reporting</p>
+  </div>
+  <div class="python-container">
+    <div class="code-panel">
+      <div class="code-header">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-title">nayepankh_automation.py</span>
+      </div>
+      <pre class="code-block"><code id="pythonCode"><span class="c"># NayePankh Foundation — Python Automation Pipeline</span>
+<span class="c"># Volunteer Data Processing & Report Generation</span>
+
+<span class="kw">import</span> json, csv, datetime
+<span class="kw">from</span> collections <span class="kw">import</span> defaultdict
+
+<span class="kw">class</span> <span class="cn">NayePankhAutomation</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self):
+        self.volunteers = []
+        self.campaigns  = []
+    
+    <span class="kw">def</span> <span class="fn">load_volunteer_data</span>(self, filepath):
+        <span class="s">"""Load and validate volunteer CSV data"""</span>
+        <span class="kw">with</span> open(filepath) <span class="kw">as</span> f:
+            reader = csv.DictReader(f)
+            <span class="kw">for</span> row <span class="kw">in</span> reader:
+                <span class="kw">if</span> self._validate(row):
+                    self.volunteers.append(row)
+        <span class="kw">return</span> len(self.volunteers)
+    
+    <span class="kw">def</span> <span class="fn">generate_weekly_report</span>(self):
+        <span class="s">"""Auto-generate impact summary"""</span>
+        cities = defaultdict(int)
+        skills = defaultdict(int)
+        <span class="kw">for</span> v <span class="kw">in</span> self.volunteers:
+            cities[v[<span class="s">'city'</span>]] += 1
+            <span class="kw">for</span> s <span class="kw">in</span> v[<span class="s">'skills'</span>].split(<span class="s">','</span>):
+                skills[s.strip()] += 1
+        <span class="kw">return</span> {
+            <span class="s">"total"</span>: len(self.volunteers),
+            <span class="s">"cities"</span>: dict(cities),
+            <span class="s">"top_skill"</span>: max(skills, key=skills.get),
+            <span class="s">"generated"</span>: datetime.date.today().isoformat()
+        }
+
+bot = <span class="cn">NayePankhAutomation</span>()
+bot.load_volunteer_data(<span class="s">"volunteers.csv"</span>)
+report = bot.generate_weekly_report()
+<span class="fn">print</span>(json.dumps(report, indent=2))
+</code></pre>
+    </div>
+    <div class="pipeline-panel">
+      <h3>⚙️ Automation Pipeline</h3>
+      <div class="pipeline-steps">
+        <div class="pipe-step done">
+          <div class="pipe-icon">📥</div>
+          <div class="pipe-text">
+            <strong>Data Ingestion</strong>
+            <span>Load volunteer CSVs from Google Forms</span>
+          </div>
+          <span class="pipe-status">✅</span>
+        </div>
+        <div class="pipe-connector"></div>
+        <div class="pipe-step done">
+          <div class="pipe-icon">🔍</div>
+          <div class="pipe-text">
+            <strong>Validation & Cleaning</strong>
+            <span>Remove duplicates, normalize fields</span>
+          </div>
+          <span class="pipe-status">✅</span>
+        </div>
+        <div class="pipe-connector"></div>
+        <div class="pipe-step active">
+          <div class="pipe-icon">🧠</div>
+          <div class="pipe-text">
+            <strong>AI Enrichment</strong>
+            <span>Classify skills, predict engagement</span>
+          </div>
+          <span class="pipe-status">🔄</span>
+        </div>
+        <div class="pipe-connector"></div>
+        <div class="pipe-step">
+          <div class="pipe-icon">📊</div>
+          <div class="pipe-text">
+            <strong>Report Generation</strong>
+            <span>Auto PDF reports with charts</span>
+          </div>
+          <span class="pipe-status">⏳</span>
+        </div>
+        <div class="pipe-connector"></div>
+        <div class="pipe-step">
+          <div class="pipe-icon">📧</div>
+          <div class="pipe-text">
+            <strong>Email Dispatch</strong>
+            <span>Send digests to team leads</span>
+          </div>
+          <span class="pipe-status">⏳</span>
+        </div>
+      </div>
+      <button class="btn-primary full-btn" onclick="runPipeline()" style="margin-top:2rem">▶ Simulate Pipeline Run</button>
+      <div id="pipelineOutput" class="pipeline-output" style="display:none"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-icon">🌱</span>
+      <span>NayePankh AI Hub</span>
+    </div>
+    <p class="footer-text">Built for NayePankh Foundation — by DEEP 🌱</p>
+    <p class="footer-sub">Powered by Gemini AI · Google Charts · Python Automation</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
